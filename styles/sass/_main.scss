@@ -1,0 +1,33 @@
+main {
+    height: calc(100vh - 33px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+.gameContainer {
+    display: flex;
+    justify-content: space-between;
+
+    .imgContainer {
+        width: 65%;
+        border: 1px solid blue;
+    }
+
+    .multipleChoiceContainer {
+        width: 30%;
+        border: 1px solid red;
+    }
+}
+
+footer {
+    padding: 10px;
+
+    p {
+        margin: 0;
+    }
+}
