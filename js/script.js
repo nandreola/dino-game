@@ -39,6 +39,7 @@ dinoApp.dinos = [
 
 const jsDinoImage = document.getElementById('jsDinoImage')
 const jsMultipleChoice = document.getElementById('jsMultipleChoice')
+const current = dinoApp.dinos[0];
 
 // Display image on the screen
 dinoApp.setGame = function (dino) {
@@ -67,6 +68,7 @@ dinoApp.displayMultipleChoice = function (choices) {
         const eachChoice = document.createElement('li');
         const button = document.createElement('button');
         button.textContent = choice;
+        button.classList.add('btnChoice');
 
         // Append button inside li
         eachChoice.append(button);
@@ -75,5 +77,18 @@ dinoApp.displayMultipleChoice = function (choices) {
     })
 }
 
-dinoApp.setGame(dinoApp.dinos[2]);
+dinoApp.setGame(current);
 
+// Find out whether the answer is correct or not
+document.getElementById('jsMultipleChoice').addEventListener('click', function(e) {
+    const target = e.target;
+
+    if (target.classList.contains('btnChoice')) {
+
+        if (current.type === target.textContent) {
+            alert('Yay! You got it! Click "next" to move to the next one');
+        } else {
+            alert('Not this one! Try again');
+        }
+    }
+})

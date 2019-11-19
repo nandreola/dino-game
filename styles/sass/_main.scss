@@ -1,5 +1,5 @@
 main {
-    height: calc(100vh - 33px);
+    height: calc(100vh - 35px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,6 +45,13 @@ h1 {
 
     .multipleChoiceUl li {
         list-style: none;
+
+        .btnChoice {
+            // border: none;
+            background: none;
+            padding: 10px;
+            margin: 10px;
+        }
     }
 
     .imgContainer,
