@@ -3,7 +3,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(../../assets/bg.jpg);
+    background-image: url(../assets/bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -54,7 +54,7 @@ h3 {
         
         .tile {
             background: $secondaryColor;
-            background-image: url(../../assets/dinoFootprint.png);
+            background-image: url(../assets/dinoFootprint.png);
             background-repeat: no-repeat;
             background-position: center;
             background-size: 40%;
@@ -81,7 +81,7 @@ h3 {
             border: none;
             width: 80%;
             background: transparent;
-            background-image: url(../../assets/woodenBg.png);
+            background-image: url(../assets/woodenBg.png);
             background-position: center;
             background-size: 100% 100%;
             padding: 10px;
