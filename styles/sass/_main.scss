@@ -27,6 +27,7 @@ h1 {
     .imgContainer {
         width: 65%;
         background: $lightColor;
+        position: relative;
 
         .dinoImage {
             height: 100%;
@@ -39,16 +40,46 @@ h1 {
         }
     }
 
+    .tilesContainer {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        perspective: 800px;
+        
+        .tile {
+            background: red;
+            border: 1px solid $secondaryColor;
+            transition: all 1s;
+        }
+
+        .flipped {
+            backface-visibility: hidden;
+            transform: rotateY(-180deg);
+
+            // background: transparent;
+        }
+    }
+
     .multipleChoiceContainer {
         width: 30%;
+        position: relative;
     }
 
     .multipleChoiceUl li {
         list-style: none;
 
         .btnChoice {
-            // border: none;
-            background: none;
+            border: none;
+            width: 80%;
+            background: transparent;
+            background-image: url(../../assets/woodenBg.png);
+            background-position: center;
+            background-size: 100% 100%;
             padding: 10px;
             margin: 10px;
         }
@@ -57,6 +88,14 @@ h1 {
     .imgContainer,
     .multipleChoiceContainer {
         border: 1px solid $mainColor;
+    }
+
+    .btnNext {
+        position: absolute;
+        bottom: 3%;
+        right: 5%;
+        padding: 5px 10px;
+        display: none;
     }
 }
 

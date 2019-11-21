@@ -248,6 +248,7 @@ h1 {
 .gameContainer .imgContainer {
   width: 65%;
   background: #fff;
+  position: relative;
 }
 
 .gameContainer .imgContainer .dinoImage {
@@ -261,8 +262,39 @@ h1 {
   margin: 0 auto;
 }
 
+.gameContainer .tilesContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[8];
+      grid-template-columns: repeat(8, 1fr);
+  -ms-grid-rows: (1fr)[6];
+      grid-template-rows: repeat(6, 1fr);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-perspective: 800px;
+          perspective: 800px;
+}
+
+.gameContainer .tilesContainer .tile {
+  background: red;
+  border: 1px solid #fade70;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.gameContainer .tilesContainer .flipped {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+
 .gameContainer .multipleChoiceContainer {
   width: 30%;
+  position: relative;
 }
 
 .gameContainer .multipleChoiceUl li {
@@ -270,7 +302,12 @@ h1 {
 }
 
 .gameContainer .multipleChoiceUl li .btnChoice {
-  background: none;
+  border: none;
+  width: 80%;
+  background: transparent;
+  background-image: url(../../assets/woodenBg.png);
+  background-position: center;
+  background-size: 100% 100%;
   padding: 10px;
   margin: 10px;
 }
@@ -278,6 +315,14 @@ h1 {
 .gameContainer .imgContainer,
 .gameContainer .multipleChoiceContainer {
   border: 1px solid #1c2f13;
+}
+
+.gameContainer .btnNext {
+  position: absolute;
+  bottom: 3%;
+  right: 5%;
+  padding: 5px 10px;
+  display: none;
 }
 
 footer {

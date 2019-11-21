@@ -37,13 +37,14 @@ dinoApp.dinos = [
     }
 ]
 
-const jsDinoImage = document.getElementById('jsDinoImage')
-const jsMultipleChoice = document.getElementById('jsMultipleChoice')
+const jsDinoImage = document.getElementById('jsDinoImage');
+const jsMultipleChoice = document.getElementById('jsMultipleChoice');
+const jsTiles = document.getElementById('jsTiles');
+
 let current = 0;
 
 // Display image on the screen
 dinoApp.setGame = function (dino) {
-
     // Clear content
     dinoApp.clearContent();
 
@@ -52,6 +53,7 @@ dinoApp.setGame = function (dino) {
     img.alt = dino.alt;
     jsDinoImage.append(img);
 
+    dinoApp.createTiles();
     dinoApp.displayMultipleChoice(dino.choices)
 }
 
@@ -59,7 +61,7 @@ dinoApp.setGame = function (dino) {
 dinoApp.clearContent = function () {
     jsDinoImage.innerHTML = '';
     jsMultipleChoice.innerHTML = '';
-
+    jsTiles.innerHTML = '';
 }
 
 // Display multiple choice on the screen
@@ -77,17 +79,35 @@ dinoApp.displayMultipleChoice = function (choices) {
     })
 }
 
+// Display tiles over the image
+dinoApp.createTiles = function () {
+    const numOfTiles = 48;
+    for (let i = 0; i < numOfTiles; i++) {
+        const tile = document.createElement('div');
+        tile.classList.add('tile');
+        jsTiles.append(tile);
+    }
+}
+
 dinoApp.setGame(dinoApp.dinos[current]);
 
+// Flip tile when clicked
+jsTiles.addEventListener('click', function(e) {
+    const target = e.target;
+
+    if(target.classList.contains('tile')) {
+        target.classList.add('flipped');
+    }
+})
+
 // Find out whether the answer is correct or not
-document.getElementById('jsMultipleChoice').addEventListener('click', function(e) {
+jsMultipleChoice.addEventListener('click', function(e) {
     const target = e.target;
 
     if (target.classList.contains('btnChoice')) {
 
         if (dinoApp.dinos[current].type === target.textContent) {
-            alert('Yay! You got it! Click "next" to move to the next one');
-
+            alert('Yay! You got it!');
 
         } else {
             alert('Not this one! Try again');
@@ -97,8 +117,6 @@ document.getElementById('jsMultipleChoice').addEventListener('click', function(e
 
 // Create a button to play next game
 dinoApp.next = function() {
-    // const next = document.createElement('button');
-    // next.textContent = 'Next';
     current = current + 1
     dinoApp.setGame(dinoApp.dinos[current]);
     // hide
