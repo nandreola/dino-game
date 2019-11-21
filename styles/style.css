@@ -279,8 +279,12 @@ h1 {
 }
 
 .gameContainer .tilesContainer .tile {
-  background: red;
-  border: 1px solid #fade70;
+  background: #fade70;
+  background-image: url(../../assets/dinoFootprint.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40%;
+  border: 1px solid #1c2f13;
   -webkit-transition: all 1s;
   transition: all 1s;
 }
@@ -295,6 +299,7 @@ h1 {
 .gameContainer .multipleChoiceContainer {
   width: 30%;
   position: relative;
+  border-left: 5px groove #fade70;
 }
 
 .gameContainer .multipleChoiceUl li {

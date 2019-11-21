@@ -52,22 +52,25 @@ h1 {
         perspective: 800px;
         
         .tile {
-            background: red;
-            border: 1px solid $secondaryColor;
+            background: $secondaryColor;
+            background-image: url(../../assets/dinoFootprint.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 40%;
+            border: 1px solid $mainColor;
             transition: all 1s;
         }
 
         .flipped {
             backface-visibility: hidden;
             transform: rotateY(-180deg);
-
-            // background: transparent;
         }
     }
 
     .multipleChoiceContainer {
         width: 30%;
         position: relative;
+        border-left: 5px groove $secondaryColor;
     }
 
     .multipleChoiceUl li {
