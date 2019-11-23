@@ -284,6 +284,8 @@ h3 {
   right: 0;
   -webkit-perspective: 800px;
           perspective: 800px;
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
 }
 
 .gameContainer .tilesContainer .tile {
@@ -302,6 +304,10 @@ h3 {
           backface-visibility: hidden;
   -webkit-transform: rotateY(-180deg);
           transform: rotateY(-180deg);
+}
+
+.gameContainer .tilesContainer.remove {
+  opacity: 0;
 }
 
 .gameContainer .multipleChoiceContainer {

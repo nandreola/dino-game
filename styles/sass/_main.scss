@@ -51,6 +51,7 @@ h3 {
         left: 0;
         right: 0;
         perspective: 800px;
+        transition: all 1.5s;
         
         .tile {
             background: $secondaryColor;
@@ -65,6 +66,10 @@ h3 {
         .flipped {
             backface-visibility: hidden;
             transform: rotateY(-180deg);
+        }
+
+        &.remove {
+            opacity: 0;
         }
     }
 

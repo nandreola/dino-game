@@ -108,12 +108,18 @@ jsMultipleChoice.addEventListener('click', function(e) {
 
         if (dinoApp.dinos[current].type === target.textContent) {
             alert('Yay! You got it!');
+            dinoApp.revealImage();
 
         } else {
             alert('Not this one! Try again');
         }
     }
 })
+
+// reveal full image when user gets the right answer
+dinoApp.revealImage = function() {
+    jsTiles.classList.add('remove');
+}
 
 // Create a button to play next game
 dinoApp.next = function() {
