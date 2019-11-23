@@ -51,7 +51,6 @@ h3 {
         left: 0;
         right: 0;
         perspective: 800px;
-        transition: all 1.5s;
         
         .tile {
             background: $secondaryColor;
@@ -70,6 +69,7 @@ h3 {
 
         &.remove {
             opacity: 0;
+            transition: all 1.5s;
         }
     }
 
@@ -103,8 +103,15 @@ h3 {
         bottom: 3%;
         right: 5%;
         padding: 5px 10px;
-        display: none;
+        transition: all 1.5s;
+        opacity: 0;
+
+        &.show {
+            opacity: 1;
+        }
     }
+
+
 }
 
 footer {

@@ -40,6 +40,7 @@ dinoApp.dinos = [
 const jsDinoImage = document.getElementById('jsDinoImage');
 const jsMultipleChoice = document.getElementById('jsMultipleChoice');
 const jsTiles = document.getElementById('jsTiles');
+const jsBtnNext = document.getElementById('jsBtnNext');
 
 let current = 0;
 
@@ -109,6 +110,7 @@ jsMultipleChoice.addEventListener('click', function(e) {
         if (dinoApp.dinos[current].type === target.textContent) {
             alert('Yay! You got it!');
             dinoApp.revealImage();
+            dinoApp.createNextBtn();
 
         } else {
             alert('Not this one! Try again');
@@ -121,10 +123,14 @@ dinoApp.revealImage = function() {
     jsTiles.classList.add('remove');
 }
 
-// Create a button to play next game
-dinoApp.next = function() {
-    current = current + 1
-    dinoApp.setGame(dinoApp.dinos[current]);
-    // hide
+// Create a button to play next game when user gets the right answer
+dinoApp.createNextBtn = function() {    
+    jsBtnNext.classList.add('show');
 }
 
+// Show next dinosaur
+jsBtnNext.addEventListener('click', function() {
+    current = current + 1
+    dinoApp.setGame(dinoApp.dinos[current]);
+    jsTiles.classList.remove('remove');
+})
