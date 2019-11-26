@@ -322,7 +322,7 @@ h3 {
 
 .gameContainer .multipleChoiceUl li .btnChoice {
   border: none;
-  width: 80%;
+  width: 90%;
   background: transparent;
   background-image: url(../assets/woodenBg.png);
   background-position: center;
@@ -339,8 +339,11 @@ h3 {
   position: absolute;
   bottom: 3%;
   right: 5%;
-  padding: 5px 10px;
-  text-transform: uppercase;
+  background: transparent;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   opacity: 0;
 }
 
@@ -348,6 +351,14 @@ h3 {
   -webkit-transition: all 1.5s;
   transition: all 1.5s;
   opacity: 1;
+}
+
+.gameContainer .btnNext .arrowRight {
+  width: 3rem;
+  height: 2.5rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-left: 5px;
 }
 
 footer {
