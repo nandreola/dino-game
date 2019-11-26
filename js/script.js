@@ -44,10 +44,11 @@ const jsBtnNext = document.getElementById('jsBtnNext');
 
 let current = 0;
 
-// Display image on the screen
+// Display image and multiple choice on the screen
 dinoApp.setGame = function (dino) {
     // Clear content
     dinoApp.clearContent();
+    jsBtnNext.classList.remove('show');
 
     const img = document.createElement('img');
     img.src = dino.image;
@@ -75,7 +76,6 @@ dinoApp.displayMultipleChoice = function (choices) {
 
         // Append button inside li
         eachChoice.append(button);
-
         jsMultipleChoice.append(eachChoice);
     })
 }
@@ -110,7 +110,7 @@ jsMultipleChoice.addEventListener('click', function(e) {
         if (dinoApp.dinos[current].type === target.textContent) {
             alert('Yay! You got it!');
             dinoApp.revealImage();
-            dinoApp.createNextBtn();
+            dinoApp.showNextBtn();
 
         } else {
             alert('Not this one! Try again');
@@ -124,13 +124,15 @@ dinoApp.revealImage = function() {
 }
 
 // Create a button to play next game when user gets the right answer
-dinoApp.createNextBtn = function() {    
-    jsBtnNext.classList.add('show');
+dinoApp.showNextBtn = function() {   
+    if (current < dinoApp.dinos.length - 1) {
+        jsBtnNext.classList.add('show');
+    }
 }
 
-// Show next dinosaur
+// Show next dinosaur when user clicks on 'next' button
 jsBtnNext.addEventListener('click', function() {
-    current = current + 1
+    current = current + 1;
     dinoApp.setGame(dinoApp.dinos[current]);
     jsTiles.classList.remove('remove');
 })
