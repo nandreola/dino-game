@@ -203,10 +203,19 @@ body {
   font-family: 'Hammersmith One', sans-serif;
 }
 
-h1 {
+h1,
+.btnNext {
   font-family: 'Freckle Face', cursive;
-  font-size: 4rem;
   color: #1c2f13;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+.btnNext {
+  text-transform: uppercase;
 }
 
 footer p {
@@ -261,6 +270,9 @@ h3 {
 
 .gameContainer .imgContainer .dinoImage {
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .gameContainer .imgContainer img {
@@ -341,16 +353,15 @@ h3 {
   right: 5%;
   background: transparent;
   border: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  opacity: 0;
+  display: none;
 }
 
 .gameContainer .btnNext.show {
   -webkit-transition: all 1.5s;
   transition: all 1.5s;
-  opacity: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .gameContainer .btnNext .arrowRight {

@@ -108,12 +108,20 @@ jsMultipleChoice.addEventListener('click', function(e) {
     if (target.classList.contains('btnChoice')) {
 
         if (dinoApp.dinos[current].type === target.textContent) {
-            alert('Yay! You got it!');
+            Swal.fire({
+                title: 'Congrats!',
+                text: 'You got it!',
+                icon: 'success'
+            })
             dinoApp.revealImage();
             dinoApp.showNextBtn();
-
+            
         } else {
-            alert('Not this one! Try again');
+            Swal.fire({
+                title: 'Oops...',
+                text: 'Not this one. Try again!',
+                icon: 'error'
+            })
         }
     }
 })

@@ -32,6 +32,7 @@ h3 {
 
         .dinoImage {
             height: 100%;
+            display: flex;
         }
 
         img {
@@ -104,12 +105,11 @@ h3 {
         right: 5%;
         background: transparent;
         border: none;
-        display: flex;
-        opacity: 0;
+        display: none;
 
         &.show {
             transition: all 1.5s;
-            opacity: 1;
+            display: flex;
         }
 
         .arrowRight {
@@ -119,8 +119,6 @@ h3 {
             margin-left: 5px;
         }
     }
-
-
 }
 
 footer {

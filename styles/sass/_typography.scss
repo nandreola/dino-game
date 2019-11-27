@@ -7,10 +7,19 @@ body {
     font-family: 'Hammersmith One', sans-serif;
 }
 
-h1 {
+h1,
+.btnNext {
     font-family: 'Freckle Face', cursive;
-    font-size: 4rem;
     color: $mainColor;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+.btnNext {
+    text-transform: uppercase;
 }
 
 footer p {
