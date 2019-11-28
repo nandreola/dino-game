@@ -45,7 +45,7 @@ const jsBtnNext = document.getElementById('jsBtnNext');
 let current = 0;
 
 // Display image and multiple choice on the screen
-dinoApp.setGame = function (dino) {
+dinoApp.setGame = dino => {
     // Clear content
     dinoApp.clearContent();
     jsBtnNext.classList.remove('show');
@@ -60,14 +60,14 @@ dinoApp.setGame = function (dino) {
 }
 
 // Function to clear dynamic content
-dinoApp.clearContent = function () {
+dinoApp.clearContent = () => {
     jsDinoImage.innerHTML = '';
     jsMultipleChoice.innerHTML = '';
     jsTiles.innerHTML = '';
 }
 
 // Display multiple choice on the screen
-dinoApp.displayMultipleChoice = function (choices) {
+dinoApp.displayMultipleChoice = choices => {
     choices.forEach(function(choice) {
         const eachChoice = document.createElement('li');
         const button = document.createElement('button');
@@ -81,7 +81,7 @@ dinoApp.displayMultipleChoice = function (choices) {
 }
 
 // Display tiles over the image
-dinoApp.createTiles = function () {
+dinoApp.createTiles = () => {
     const numOfTiles = 48;
     for (let i = 0; i < numOfTiles; i++) {
         const tile = document.createElement('div');
@@ -105,7 +105,10 @@ jsTiles.addEventListener('click', function(e) {
 jsMultipleChoice.addEventListener('click', function(e) {
     const target = e.target;
 
-    if (target.classList.contains('btnChoice')) {
+    // find element with flipped class
+    const el = document.querySelectorAll('.flipped');
+
+    if (target.classList.contains('btnChoice') && el.length) {
 
         if (dinoApp.dinos[current].type === target.textContent) {
             Swal.fire({
@@ -115,7 +118,7 @@ jsMultipleChoice.addEventListener('click', function(e) {
             })
             dinoApp.revealImage();
             dinoApp.showNextBtn();
-            
+
         } else {
             Swal.fire({
                 title: 'Oops...',
@@ -123,16 +126,23 @@ jsMultipleChoice.addEventListener('click', function(e) {
                 icon: 'error'
             })
         }
+    // if no tile is flipped, ask user to flip 
+    } else {
+        Swal.fire({
+            title: 'Hmm...',
+            text: 'You haven\'t flipped any tile yet',
+            icon: 'warning'
+        })
     }
 })
 
 // reveal full image when user gets the right answer
-dinoApp.revealImage = function() {
+dinoApp.revealImage = () => {
     jsTiles.classList.add('remove');
 }
 
 // Create a button to play next game when user gets the right answer
-dinoApp.showNextBtn = function() {   
+dinoApp.showNextBtn = () => {   
     if (current < dinoApp.dinos.length - 1) {
         jsBtnNext.classList.add('show');
     }
