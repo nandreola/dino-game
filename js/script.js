@@ -105,6 +105,11 @@ jsTiles.addEventListener('click', function(e) {
 jsMultipleChoice.addEventListener('click', function(e) {
     const target = e.target;
 
+    // disable options 
+    if (target.classList.contains('disabled')) {
+        return
+    }
+
     // find element with flipped class
     const el = document.querySelectorAll('.flipped');
 
@@ -118,6 +123,7 @@ jsMultipleChoice.addEventListener('click', function(e) {
             })
             dinoApp.revealImage();
             dinoApp.showNextBtn();
+            dinoApp.disableOptions();
 
         } else {
             Swal.fire({
@@ -139,6 +145,14 @@ jsMultipleChoice.addEventListener('click', function(e) {
 // reveal full image when user gets the right answer
 dinoApp.revealImage = () => {
     jsTiles.classList.add('remove');
+}
+
+// disable options once user gets the correct answer
+dinoApp.disableOptions = () => {
+    const options = document.querySelectorAll('.btnChoice');
+    options.forEach(function(option) {
+        option.classList.add('disabled');
+    })
 }
 
 // Create a button to play next game when user gets the right answer

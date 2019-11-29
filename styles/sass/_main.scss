@@ -93,6 +93,11 @@ h3 {
             padding: 10px;
             margin: 10px;
         }
+
+        .disabled {
+            filter: grayscale(1);
+            cursor: not-allowed;
+        }
     }
 
     .imgContainer {

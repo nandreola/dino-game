@@ -343,6 +343,12 @@ h3 {
   margin: 10px;
 }
 
+.gameContainer .multipleChoiceUl li .disabled {
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+  cursor: not-allowed;
+}
+
 .gameContainer .imgContainer {
   border: 1px solid #1c2f13;
 }
