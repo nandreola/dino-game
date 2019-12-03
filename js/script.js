@@ -49,6 +49,7 @@ dinoApp.setGame = dino => {
     // Clear content
     dinoApp.clearContent();
     jsBtnNext.classList.remove('show');
+    jsTiles.classList.remove('remove');
 
     const img = document.createElement('img');
     img.src = dino.image;
@@ -116,14 +117,34 @@ jsMultipleChoice.addEventListener('click', function(e) {
     if (target.classList.contains('btnChoice') && el.length) {
 
         if (dinoApp.dinos[current].type === target.textContent) {
-            Swal.fire({
-                title: 'Congrats!',
-                text: 'You got it!',
-                icon: 'success'
-            })
-            dinoApp.revealImage();
-            dinoApp.showNextBtn();
-            dinoApp.disableOptions();
+
+            if (current === dinoApp.dinos.length -1) {
+                Swal.fire({
+                    title: 'Congrats!',
+                    text: 'You got them all!!!',
+                    icon: 'success',
+                    confirmButtonText: 'Play again',
+                    showCancelButton: true
+                }).then((result) => {
+                    // Play again
+                    if (result.value) {
+                        current = 0;
+                        dinoApp.setGame(dinoApp.dinos[current]);
+                    }
+                })
+                dinoApp.revealImage();
+                dinoApp.disableOptions();
+
+            } else {
+                Swal.fire({
+                    title: 'Congrats!',
+                    text: 'You got it!',
+                    icon: 'success'
+                })
+                dinoApp.revealImage();
+                dinoApp.showNextBtn();
+                dinoApp.disableOptions();
+            }
 
         } else {
             Swal.fire({
@@ -166,5 +187,4 @@ dinoApp.showNextBtn = () => {
 jsBtnNext.addEventListener('click', function() {
     current = current + 1;
     dinoApp.setGame(dinoApp.dinos[current]);
-    jsTiles.classList.remove('remove');
 })
