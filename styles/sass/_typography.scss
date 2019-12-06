@@ -8,6 +8,7 @@ body {
 }
 
 h1,
+h2,
 .btnNext {
     font-family: 'Freckle Face', cursive;
     color: $mainColor;
@@ -15,7 +16,8 @@ h1,
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 6rem;
+    color: $lightColor;
 }
 
 .btnNext {

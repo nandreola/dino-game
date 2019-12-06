@@ -204,6 +204,7 @@ body {
 }
 
 h1,
+h2,
 .btnNext {
   font-family: 'Freckle Face', cursive;
   color: #1c2f13;
@@ -211,7 +212,8 @@ h1,
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 6rem;
+  color: #fff;
 }
 
 .btnNext {
@@ -221,6 +223,57 @@ h1 {
 footer p {
   font-size: 1.4rem;
   color: #fff;
+}
+
+header {
+  min-height: 100vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4))), url(../../assets/introBg.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.4)), url(../../assets/introBg.jpg);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+
+header .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  padding: 30px 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header .wrapper .introImgContainer {
+  width: 60%;
+  padding: 30px;
+}
+
+header .wrapper .playNow {
+  background: transparent;
+  border: none;
+  background-image: url(../assets/woodenBg.png);
+  background-position: center;
+  background-size: 100% 100%;
+  padding: 25px;
+  width: 20%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+header .wrapper .playNow:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 main {

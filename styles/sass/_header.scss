@@ -1,0 +1,38 @@
+header {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.4)), url(../../assets/introBg.jpg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+
+    .wrapper {
+        display: flex;  
+        flex-direction: column;
+        min-height: 100vh;
+        padding: 30px 0;
+        align-items: center;
+        justify-content: center;
+
+        .introImgContainer {
+            width: 60%;
+            padding: 30px;
+        }
+
+        .playNow {
+            background: transparent;
+            border: none;
+            background-image: url(../assets/woodenBg.png);
+            background-position: center;
+            background-size: 100% 100%;
+            padding: 25px;
+            width: 20%;
+            transition: all 0.5s;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+}
