@@ -41,8 +41,14 @@ const jsDinoImage = document.getElementById('jsDinoImage');
 const jsMultipleChoice = document.getElementById('jsMultipleChoice');
 const jsTiles = document.getElementById('jsTiles');
 const jsBtnNext = document.getElementById('jsBtnNext');
+const jsPlayNow = document.getElementById('jsPlayNow');
 
 let current = 0;
+
+// Slide up page once user clicks on 'play now' 
+jsPlayNow.addEventListener('click', function () {
+    document.querySelector('header').classList.add('slideUp');
+})
 
 // Display image and multiple choice on the screen
 dinoApp.setGame = dino => {

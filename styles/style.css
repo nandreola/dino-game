@@ -232,8 +232,12 @@ header {
   background-position: center;
   background-size: cover;
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   z-index: 10;
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
 }
 
 header .wrapper {
@@ -252,6 +256,7 @@ header .wrapper {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
 }
 
 header .wrapper .introImgContainer {
@@ -272,8 +277,13 @@ header .wrapper .playNow {
 }
 
 header .wrapper .playNow:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+header.slideUp {
+  top: -100vh;
+  opacity: 0.5;
 }
 
 main {
@@ -396,10 +406,20 @@ h3 {
   margin: 10px;
 }
 
+.gameContainer .multipleChoiceUl li .btnChoice:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
 .gameContainer .multipleChoiceUl li .disabled {
   -webkit-filter: grayscale(1);
           filter: grayscale(1);
   cursor: not-allowed;
+}
+
+.gameContainer .multipleChoiceUl li .disabled:hover {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .gameContainer .imgContainer {

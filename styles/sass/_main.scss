@@ -92,11 +92,19 @@ h3 {
             background-size: 100% 100%;
             padding: 10px;
             margin: 10px;
+
+            &:hover {
+                transform: scale(1.05);
+            }
         }
 
         .disabled {
             filter: grayscale(1);
             cursor: not-allowed;
+
+            &:hover {
+                transform: scale(1);
+            }
         }
     }
 
