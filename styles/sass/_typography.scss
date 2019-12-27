@@ -28,3 +28,15 @@ footer p {
     font-size: 1.4rem;
     color: $lightColor;
 }
+
+// Responsiveness styles
+@media (max-width: 600px) {
+    h1 {
+        font-size: 4rem;
+        text-align: center;
+    }
+
+    body {
+        font-size: 1.4rem;
+    }
+}

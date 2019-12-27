@@ -18,8 +18,9 @@ header {
         align-items: center;
         justify-content: center;
         position: relative;
+    }
 
-        .introImgContainer {
+    .introImgContainer {
             width: 60%;
             padding: 30px;
         }
@@ -38,10 +39,23 @@ header {
                 transform: scale(1.1);
             }
         }
-    }
 
     &.slideUp {
         top: -100vh;
         opacity: 0.5;
+    }
+}
+
+// Responsivess styles
+@media (max-width: 768px) {
+
+    header {
+        .introImgContainer{
+            width: 80%;
+        }
+
+        .playNow {
+            width: 50%;
+        }
     }
 }

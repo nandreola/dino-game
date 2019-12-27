@@ -1,5 +1,5 @@
 main {
-    height: calc(100vh - 35px);
+    height: calc(100vh - 38px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,5 +140,46 @@ footer {
 
     p {
         margin: 0;
+    }
+}
+
+// Responsiveness styles
+@media (max-width: 850px) {
+    .gameContainer {
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: space-around;
+
+        .multipleChoiceContainer {
+            width: 100%;
+            border-left: none;
+        }
+
+        .multipleChoiceUl {
+            padding-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            li {
+                width: 50%;
+            }
+        }  
+        
+        h3 {
+            padding-top: 15px;
+        }
+
+        .btnNext {
+            right: 0;
+            bottom: -10px;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .gameContainer .imgContainer {
+        width: 85%;
     }
 }

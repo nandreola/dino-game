@@ -225,6 +225,16 @@ footer p {
   color: #fff;
 }
 
+@media (max-width: 600px) {
+  h1 {
+    font-size: 4rem;
+    text-align: center;
+  }
+  body {
+    font-size: 1.4rem;
+  }
+}
+
 header {
   min-height: 100vh;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4))), url(../../assets/introBg.jpg);
@@ -259,12 +269,12 @@ header .wrapper {
   position: relative;
 }
 
-header .wrapper .introImgContainer {
+header .introImgContainer {
   width: 60%;
   padding: 30px;
 }
 
-header .wrapper .playNow {
+header .playNow {
   background: transparent;
   border: none;
   background-image: url(../assets/woodenBg.png);
@@ -276,7 +286,7 @@ header .wrapper .playNow {
   transition: all 0.5s;
 }
 
-header .wrapper .playNow:hover {
+header .playNow:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
@@ -286,8 +296,17 @@ header.slideUp {
   opacity: 0.5;
 }
 
+@media (max-width: 768px) {
+  header .introImgContainer {
+    width: 80%;
+  }
+  header .playNow {
+    width: 50%;
+  }
+}
+
 main {
-  height: calc(100vh - 35px);
+  height: calc(100vh - 38px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -458,5 +477,52 @@ footer {
 
 footer p {
   margin: 0;
+}
+
+@media (max-width: 850px) {
+  .gameContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .gameContainer .multipleChoiceContainer {
+    width: 100%;
+    border-left: none;
+  }
+  .gameContainer .multipleChoiceUl {
+    padding-left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .gameContainer .multipleChoiceUl li {
+    width: 50%;
+  }
+  .gameContainer h3 {
+    padding-top: 15px;
+  }
+  .gameContainer .btnNext {
+    right: 0;
+    bottom: -10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .gameContainer .imgContainer {
+    width: 85%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
