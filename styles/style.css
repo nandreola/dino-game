@@ -237,8 +237,8 @@ footer p {
 
 header {
   min-height: 100vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4))), url(../../assets/introBg.jpg);
-  background: linear-gradient(rgba(0, 0, 0, 0.4)), url(../../assets/introBg.jpg);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4))), url(../assets/introBg.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.4)), url(../assets/introBg.jpg);
   background-position: center;
   background-size: cover;
   position: absolute;
@@ -341,7 +341,7 @@ h3 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 50vh;
+  height: 60vh;
 }
 
 .gameContainer .imgContainer {
@@ -378,6 +378,7 @@ h3 {
   right: 0;
   -webkit-perspective: 800px;
           perspective: 800px;
+  height: 100%;
 }
 
 .gameContainer .tilesContainer .tile {
@@ -493,6 +494,18 @@ footer p {
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
+  .gameContainer .imgContainer {
+    height: 60%;
+  }
+  .gameContainer .dinoImage {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
   .gameContainer .multipleChoiceContainer {
     width: 100%;
     border-left: none;
@@ -510,6 +523,9 @@ footer p {
   }
   .gameContainer .multipleChoiceUl li {
     width: 50%;
+  }
+  .gameContainer .multipleChoiceUl li .btnChoice {
+    margin-top: 0;
   }
   .gameContainer h3 {
     padding-top: 15px;

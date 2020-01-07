@@ -23,7 +23,7 @@ h3 {
 .gameContainer {
     display: flex;
     justify-content: space-between;
-    height: 50vh;
+    height: 60vh;
 
     .imgContainer {
         width: 65%;
@@ -52,6 +52,7 @@ h3 {
         left: 0;
         right: 0;
         perspective: 800px;
+        height: 100%;
         
         .tile {
             background: $secondaryColor;
@@ -151,6 +152,15 @@ footer {
         align-content: center;
         justify-content: space-around;
 
+        .imgContainer {
+            height: 60%;
+        }
+
+        .dinoImage {
+            flex-direction: column;
+            justify-content: center;
+        }
+
         .multipleChoiceContainer {
             width: 100%;
             border-left: none;
@@ -164,6 +174,10 @@ footer {
 
             li {
                 width: 50%;
+
+                .btnChoice {
+                    margin-top: 0;
+                }
             }
         }  
         
